@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\QUY\\Downloads\\QLD\\QLD\\QLD.csproj": {}
+    "C:\\Users\\QUY\\source\\repos\\QLD\\QLD\\QLD\\QLSV\\QLD.csproj": {}
   },
   "projects": {
-    "C:\\Users\\QUY\\Downloads\\QLD\\QLD\\QLD.csproj": {
+    "C:\\Users\\QUY\\source\\repos\\QLD\\QLD\\QLD\\QLSV\\QLD.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\QUY\\Downloads\\QLD\\QLD\\QLD.csproj",
+        "projectUniqueName": "C:\\Users\\QUY\\source\\repos\\QLD\\QLD\\QLD\\QLSV\\QLD.csproj",
         "projectName": "QLD",
-        "projectPath": "C:\\Users\\QUY\\Downloads\\QLD\\QLD\\QLD.csproj",
+        "projectPath": "C:\\Users\\QUY\\source\\repos\\QLD\\QLD\\QLD\\QLSV\\QLD.csproj",
         "packagesPath": "C:\\Users\\QUY\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\QUY\\Downloads\\QLD\\QLD\\obj\\",
+        "outputPath": "C:\\Users\\QUY\\source\\repos\\QLD\\QLD\\QLD\\QLSV\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\QUY\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Data.SqlClient;
 
 namespace QLD
 {
@@ -28,8 +29,33 @@ namespace QLD
             InitializeComponent();
             students = new List<Student>();
             dgvScores.ItemsSource = students;
+            LoadStudents();
         }
 
+        private void LoadStudents()
+        {
+            // Xóa dữ liệu cũ
+            students.Clear();
+
+            // Lấy danh sách sinh viên từ CSDL và thêm vào danh sách students
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string query = "SELECT * FROM Students";
+                SqlCommand command = new SqlCommand(query, connection);
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    string studentID = reader.GetString(0);
+                    string subject = reader.GetString(1);
+                    int score = reader.GetInt32(2);
+
+                    Student student = new Student(studentID, subject, score);
+                    students.Add(student);
+                }
+                reader.Close();
+            }
+        }
         private void btThem_Click(object sender, RoutedEventArgs e)
         {
             string studentID = txtStudentID.Text;
@@ -40,6 +66,7 @@ namespace QLD
             students.Add(student);
 
             ClearInputs();
+            LoadStudents();
         }
 
         private void btSua_Click(object sender, RoutedEventArgs e)
@@ -51,6 +78,7 @@ namespace QLD
                 selectedStudent.Score = int.Parse(txtScore.Text);
 
                 ClearInputs();
+                LoadStudents();
             }
         }
 
@@ -61,6 +89,7 @@ namespace QLD
                 students.Remove(selectedStudent);
                 ClearInputs();
             }
+            LoadStudents();
         }
         private void ClearInputs()
         {
